@@ -26,8 +26,8 @@ AddEventHandler('playerDropped', function (reason)
 end)
 
 local spawned = false
-RegisterNetEvent('scrp-savelogic:server:load')
-AddEventHandler('scrp-savelogic:server:load', function ()
+RegisterNetEvent('jay-savelogic:server:load')
+AddEventHandler('jay-savelogic:server:load', function ()
     local identifier = GetPlayerIdentifier(source, 0)
 
     if spawned then
@@ -37,7 +37,7 @@ AddEventHandler('scrp-savelogic:server:load', function ()
 
     for i = 1, #stats do
         if (stats[i].identifier == identifier) then
-            TriggerClientEvent('scrp-savelogic:client:load', source, stats[i].health, stats[i].armour)
+            TriggerClientEvent('jay-savelogic:client:load', source, stats[i].health, stats[i].armour)
             table.remove(stats, i)
             saveDatabase()
             spawned = true

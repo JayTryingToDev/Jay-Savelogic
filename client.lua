@@ -2,14 +2,14 @@ local firstspawn = true
 
 AddEventHandler('playerSpawned', function ()
     if firstspawn then
-        TriggerServerEvent('scrp-savelogic:server:load')
+        TriggerServerEvent('jay-savelogic:server:load')
         firstspawn = false
     end
 end)
 
 local spawned = false
-RegisterNetEvent('scrp-savelogic:client:load')
-AddEventHandler('scrp-savelogic:client:load', function (health, armour)
+RegisterNetEvent('jay-savelogic:client:load')
+AddEventHandler('jay-savelogic:client:load', function (health, armour)
 
     if spawned then
         print ('Already spawned')
