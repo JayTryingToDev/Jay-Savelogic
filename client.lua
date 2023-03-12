@@ -16,7 +16,7 @@ AddEventHandler('jay-savelogic:client:load', function (health, armour)
         return
     end
 
-    local ped = PlayerPedId()
+    local ped = GetPlayerPed(-1)
     SetEntityHealth(ped, health)
     SetPedArmour(ped, armour)
     spawned = true

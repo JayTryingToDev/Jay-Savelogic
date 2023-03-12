@@ -1,4 +1,3 @@
-Author 'Jay (SlumCity#0001)' 
 fx_version 'cerulean'
 game 'gta5'
 

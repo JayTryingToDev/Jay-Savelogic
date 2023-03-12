@@ -18,9 +18,10 @@ saveDatabase = function()
 end
 
 AddEventHandler('playerDropped', function (reason)
-    local ped = PlayerPedId(source)
+    local ped = GetPlayerPed(source)
     local health = GetEntityHealth(ped)
     local armour = GetPedArmour(ped)
+
     savePlayerInformation(source, health, armour)
 end)
 
@@ -28,6 +29,7 @@ local spawned = false
 RegisterNetEvent('jay-savelogic:server:load')
 AddEventHandler('jay-savelogic:server:load', function ()
     local identifier = GetPlayerIdentifier(source, 0)
+
     if spawned then
         --print ('Already spawned')
         return
